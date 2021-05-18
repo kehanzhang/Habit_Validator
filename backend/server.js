@@ -5,8 +5,9 @@ const bodyParser = require('body-parser');
 
 //for the .env file, if it is already in the same folder as .env
 //require('dotenv').config();
-require('dotenv').config();
-
+require('dotenv').config({
+    path: './config/config.env'
+})
 
 const app = express();
 const port = process.env.PORT;
