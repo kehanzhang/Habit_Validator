@@ -22,7 +22,7 @@ const {
 router.post('/register', validSign,
 registerController)
 
-//router.post('/login',validLogin, signinController)
+router.post('/login',validLogin, signinController)
 
 router.post('/activation', activationController)
 

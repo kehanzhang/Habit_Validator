@@ -2,10 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import App from './App';
-//import Login from './screens/Login.jsx';
+import Login from './screens/Login.jsx';
 import Register from './screens/Register.jsx';
-import Activate from './screens/Activate';
-// import Activate from './screens/Activate.jsx';
+import Activate from './screens/Activate.jsx';
 // import Private from './screens/Private.jsx';
 // import Admin from './screens/Admin.jsx';
 // import ForgetPassword from './screens/ForgetPassword.jsx';
@@ -20,6 +19,7 @@ ReactDOM.render(
       <Route path='/' exact render={props => <App {...props} />} />
       <Route path='/register' exact render={props => <Register {...props} />} />
       <Route path='/users/activate/:token' exact render={props => <Activate {...props} />} />
+      <Route path='/login' exact render={props => <Login {...props} />} />
       {/* <Route path='/login' exact render={props => <Login {...props} />} />
       <Route path='/users/password/forget' exact render={props => <ForgetPassword {...props} />} />
       <Route path='/users/password/reset/:token' exact render={props => <ResetPassword {...props} />} />

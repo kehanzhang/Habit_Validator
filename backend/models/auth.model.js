@@ -20,10 +20,6 @@ const userScheama = new mongoose.Schema(
       required: true
     },
     salt: String,
-    role: {
-      type: String,
-      default: 'subscriber'
-    },
     resetPasswordLink: {
       data: String,
       default: ''
@@ -49,6 +45,7 @@ userScheama
 // methods
 userScheama.methods = {
   authenticate: function(plainText) {
+    //console.log(this.encryptPassword(plainText), this.hashed_password)
     return this.encryptPassword(plainText) === this.hashed_password;
   },
 
