@@ -34,9 +34,7 @@ const Login = ({ history }) => {
               password1: '',
               textChange: 'Submitted'
             });
-            isAuth() && isAuth().role === 'admin'
-              ? history.push('/admin')
-              : history.push('/private');
+            isAuth()&& history.push('/')
             toast.success(`Hey ${res.data.user.name}, Welcome back!`);
           });
         })
