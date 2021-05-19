@@ -114,11 +114,6 @@ const Register = () => {
                   <span className='ml-3'>{textChange}</span>
                 </button>
               </div>
-              <div className='my-12 border-b text-center'>
-                <div className='leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2'>
-                  Or sign with email or social login
-                </div>
-              </div>
               <div className='flex flex-col items-center'>
                 <a
                   className='w-full max-w-xs font-bold shadow-sm rounded-lg py-3

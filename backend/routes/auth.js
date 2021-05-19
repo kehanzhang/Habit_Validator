@@ -12,22 +12,19 @@ const {
     facebookController
 } = require('../controllers/auth.controller')
 
+const {
+    validSign,
+    validLogin,
+    forgotPasswordValidator,
+    resetPasswordValidator
+} = require('../helpers/valid')
 
-// const {
-//     validSign,
-//     validLogin,
-//     forgotPasswordValidator,
-//     resetPasswordValidator
-// } = require('../helpers/valid')
+router.post('/register', validSign,
+registerController)
 
-router.post('/register',
-//    validSign,
-    registerController)
+//router.post('/login',validLogin, signinController)
 
-// router.post('/login',
-//     validLogin, signinController)
-
-// router.post('/activation', activationController)
+router.post('/activation', activationController)
 
 // // forgot reset password
 // router.put('/forgotpassword', forgotPasswordValidator, forgotPasswordController);
