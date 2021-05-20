@@ -3,31 +3,17 @@ import axios from 'axios';
 
 export default class Create_Habit extends Component {
 
-    constructor(props){
-        super(props);
-        //making sure that 'this' is defined for the rest of the file.
-        this.onChangeUsername = this.onChangeUsername.bind(this);
-        this.onChangeTitle = this.onChangeTitle.bind(this);
-        this.onChangeDescription = this.onChangeDescription.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
-
-        this.state = {
+    state = {
             username: '',
             title: '',
             description: ''
             //lifespan: new Date(),
-        }
     }
+    
 
     componentDidMount(){//this function is ran before the page is loaded, usefull for hardcoding values in 
         this.setState({
             username: 'Kehan Zhang'
-        });
-    }
-
-    onChangeUsername(e){
-        this.setState({
-            username: e.target.value
         });
     }
     

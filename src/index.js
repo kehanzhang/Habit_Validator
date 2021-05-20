@@ -7,7 +7,6 @@ import Register from './screens/Register.jsx';
 import Activate from './screens/Activate.jsx';
 import ForgetPassword from './screens/ForgetPassword.jsx';
 import ResetPassword from './screens/ResetPassword.jsx';
-// import PrivateRoute from './Routes/PrivateRoute';
 import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.render(
