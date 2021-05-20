@@ -17,11 +17,8 @@ const {
     resetPasswordValidator
 } = require('../helpers/valid')
 
-router.post('/register', validSign,
-registerController)
-
+router.post('/register', validSign,registerController)
 router.post('/login',validLogin, signinController)
-
 router.post('/activation', activationController)
 
 // forgot reset password

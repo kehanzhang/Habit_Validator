@@ -9,12 +9,12 @@ router.route('/').get((req, res) => {
 
 
 router.route('/add').post((req, res) => {
-  const username = req.body.username;
+  const creator = req.body.creator;
   const title = req.body.title;
   const description = req.body.description;
 
   const newHabit = new Habit({
-    username,
+    creator,
     title,
     description
   });
@@ -30,6 +30,14 @@ router.route('/:id').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/owned/:id').get((req, res) => {
+  let by_id = {creator: req.params.id}
+  Habit.find(by_id)
+    .then(habit => res.json(habit))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+
 router.route('/:id').delete((req, res) => {
   Habit.findByIdAndDelete(req.params.id)
     .then(() => res.json('Habit deleted.'))
@@ -39,7 +47,6 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) => {
   Habit.findById(req.params.id)
     .then((habit) => {
-      habit.username = req.body.username;
       habit.title = req.body.title;
       habit.description = req.body.description;
 

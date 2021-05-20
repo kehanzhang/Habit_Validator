@@ -28,10 +28,12 @@ connection.once('open', () => {
 //load all routes
 const HabitRouter = require('./routes/habits');
 const authRouter = require('./routes/auth');
+const userRouter = require('./routes/user')
 
 //use all routes
 app.use('/habits', HabitRouter);
-app.use('/api/', authRouter);
+app.use('/api', authRouter);
+app.use('/api', userRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);

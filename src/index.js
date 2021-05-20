@@ -8,17 +8,19 @@ import Activate from './screens/Activate.jsx';
 import ForgetPassword from './screens/ForgetPassword.jsx';
 import ResetPassword from './screens/ResetPassword.jsx';
 import 'react-toastify/dist/ReactToastify.css';
+import PrivateRoute from './Routes/PrivateRoute';
+import Private from './screens/Private.jsx';
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path='/' exact render={props => <App {...props} />} />
+      <PrivateRoute path='/private' exact component = {Private} />
+      <PrivateRoute path='/' exact component = {App} />
       <Route path='/register' exact render={props => <Register {...props} />} />
       <Route path='/users/activate/:token' exact render={props => <Activate {...props} />} />
       <Route path='/login' exact render={props => <Login {...props} />} />
       <Route path='/users/password/forget' exact render={props => <ForgetPassword {...props} />} />
       <Route path='/users/password/reset/:token' exact render={props => <ResetPassword {...props} />} />
-      <Redirect to='/' />
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')

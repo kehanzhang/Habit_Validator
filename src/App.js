@@ -10,12 +10,10 @@ import Create_Habit from "./components/Create_Habit.component"
 function App() {
   return (
     <Router>
-      <div className="container">
       <Navbar />
       <br/>
       <Route path="/" exact component={Habit_Home_Page} />
       <Route path="/create" exact component={Create_Habit} />
-      </div>
     </Router>
   );
 }

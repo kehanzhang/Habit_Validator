@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import {Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import './styles.css'
 import { signout } from '../helpers/auth';
 
 export default class Navbar extends Component {
-  isSignedIn = true;
 
   render() {
     return (
-      <nav className="navbar navbar-dark bg-dark navbar-expand-lg mr-auto">
-        <Link to="/" className="navbar-brand">Verifier</Link>
-        <div className="collpase navbar-collapse">
+      
+      <nav className="navbar navbar-light bg-indego navbar-expand-lg mr-auto" style={{'backgroundColor': '#677ee9'}}>
+        <a className="navbar-brand ml-6">Habit Validator</a>
         <ul className="navbar-nav mr-auto">
           <li className="navbar-item">
           <Link to="/" className="nav-link">Habits</Link>
@@ -23,13 +22,14 @@ export default class Navbar extends Component {
           <Link to="/user" className="nav-link">Account</Link>
           </li>
         </ul>
-         {this.isSignedIn ?  <Button variant="outline-primary" type="button" classNam ="mr-4" 
+         <Button className = "mr-6" variant="secondary" type="button"
          onClick={(e) => {
                 e.preventDefault();
                 signout()
+                window.location.reload();
           }}>
-          Log Out</Button> : <div>Not signed in</div>}
-        </div>
+          Log Out
+          </Button>
       </nav>
     );
   }
