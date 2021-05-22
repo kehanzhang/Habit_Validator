@@ -12,11 +12,14 @@ router.route('/add').post((req, res) => {
   const creator = req.body.creator;
   const title = req.body.title;
   const description = req.body.description;
-
+  const today = req.body.today;
+  const history = req.body.history;
   const newHabit = new Habit({
     creator,
     title,
     description
+    // today,
+    // history
   });
 
   newHabit.save()

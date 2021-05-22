@@ -15,12 +15,15 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <PrivateRoute path='/private' exact component = {Private} />
+      {/* <PrivateRoute path="/" exact component={Habit_Home_Page} />
+      <PrivateRoute path="/create" exact component={Create_Habit} /> */}
       <PrivateRoute path='/' exact component = {App} />
       <Route path='/register' exact render={props => <Register {...props} />} />
       <Route path='/users/activate/:token' exact render={props => <Activate {...props} />} />
       <Route path='/login' exact render={props => <Login {...props} />} />
       <Route path='/users/password/forget' exact render={props => <ForgetPassword {...props} />} />
       <Route path='/users/password/reset/:token' exact render={props => <ResetPassword {...props} />} />
+
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')

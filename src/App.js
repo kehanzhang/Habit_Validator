@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Redirect, Switch} from "react-router-dom";
 
 import Navbar from "./components/navbar.component"
-import Habit_Home_Page from "./components/Habit_Home_Page.component"
+import Habit_Home_Page from "./components/Habit_Home_Page"
 import Create_Habit from "./components/Create_Habit.component"
 
 //rendered by index.js

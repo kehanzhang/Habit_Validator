@@ -14,6 +14,8 @@ export default class Create_Habit extends Component {
             creator: '',
             title: '',
             description: ''
+            // today: false,
+            // history: []
             //lifespan: new Date(),
         }
     }
@@ -57,7 +59,7 @@ export default class Create_Habit extends Component {
             .catch(err => {
                 toast.error(err.response.data.errors);
               });
-        //window.location = "/";
+        window.location = "/";
     }
 
     render() {
