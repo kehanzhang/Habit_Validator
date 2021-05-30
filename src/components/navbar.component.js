@@ -10,16 +10,16 @@ export default class Navbar extends Component {
     return (
       
       <nav className="navbar navbar-light bg-indego navbar-expand-lg mr-auto" style={{'backgroundColor': '#677ee9'}}>
-        <a className="navbar-brand ml-6">Habit Validator</a>
+        <a className="navbar-brand ml-6 text-white">Habit Validator </a>
         <ul className="navbar-nav mr-auto">
           <li className="navbar-item">
-          <Link to="/" className="nav-link">Habits</Link>
+          <Link to="/" className="nav-link text-white" >Habits</Link>
           </li>
           <li className="navbar-item">
-          <Link to="/create" className="nav-link">Create New Habit</Link>
+          <Link to="/create" className="nav-link text-white" >Create New Habit</Link>
           </li>
           <li className="navbar-item">
-          <Link to="/user" className="nav-link">Account</Link>
+          <Link to="/user" className="nav-link text-white" >Account</Link>
           </li>
         </ul>
          <Button className = "mr-6" variant="secondary" type="button"

@@ -9,16 +9,14 @@ router.route('/').get((req, res) => {
 
 
 router.route('/add').post((req, res) => {
-  const creator = req.body.creator;
-  const title = req.body.title;
-  const description = req.body.description;
-  const today = req.body.today;
-  const history = req.body.history;
+  const {creator, title, description, today=false, streak=0} = req.body
+  //const history = req.body.history;
   const newHabit = new Habit({
     creator,
     title,
-    description
-    // today,
+    description,
+    today,
+    streak
     // history
   });
 
@@ -41,6 +39,7 @@ router.route('/owned/:id').get((req, res) => {
 });
 
 
+
 router.route('/:id').delete((req, res) => {
   Habit.findByIdAndDelete(req.params.id)
     .then(() => res.json('Habit deleted.'))
@@ -60,4 +59,15 @@ router.route('/update/:id').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/updateToday/:id').post((req, res) => {
+  Habit.findById(req.params.id)
+    .then((habit) => {
+      habit.today = habit.today ? false : true
+      habit.save()
+        .then((habit) => res.json({message: 'habit updated!', today: habit.today})
+        )
+        .catch(err => res.status(400).json('Error: ' + err));
+    })
+    .catch(err => res.status(400).json('Error: ' + err));
+});
 module.exports = router;

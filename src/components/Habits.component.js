@@ -35,7 +35,6 @@ const Habits = () => {
             .catch(err => {
                 toast.error(err.response.data.errors);
             });
-
     }
 
     // console.log(habits)
